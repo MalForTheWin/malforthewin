@@ -4,303 +4,61 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Late Night Space Flight with MalForTheWin — Live Space Science on Twitch</title>
-<meta name="description" content="A live late night talk show about real astronomy and astrophysics, hosted inside a 1:1 scale recreation of the Milky Way. New episodes live on Twitch.">
+<meta name="description" content="A live late night talk show about real astronomy and astrophysics, hosted inside a 1:1 scale recreation of the Milky Way. Live on Twitch.">
 <meta property="og:title" content="Late Night Space Flight with MalForTheWin">
 <meta property="og:description" content="Live space science. Late night format. Real galaxy.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Exo+2:wght@400;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-<style>
-/* ====== RESET & BASE ====================================================== */
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --void:#080D1F;--navy:#0A0F28;--royal:#001870;
-  --electric:#0060E0;--steel:#4A7FD4;
-  --deep-violet:#3D1A78;--cosmic:#7B4FCC;
-  --gold:#C49A28;--white:#FFFFFF;--muted:#8BA8CC;
-  --max-w:1080px
-}
-html{scroll-behavior:smooth}
-body{background:var(--void);color:var(--white);font-family:'Inter',sans-serif;font-size:16px;line-height:1.65;overflow-x:hidden}
-img{display:block}
-a{color:inherit;text-decoration:none}
-.container{max-width:var(--max-w);margin:0 auto;padding:0 2rem}
-
-/* ====== SCROLL REVEAL ===================================================== */
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .5s ease,transform .5s ease}
-.reveal.visible{opacity:1;transform:translateY(0)}
-
-/* ====== NAV ================================================================ */
-#nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(8,13,31,.93);border-bottom:2px solid var(--electric);backdrop-filter:blur(8px)}
-.nav-inner{max-width:var(--max-w);margin:0 auto;padding:0 2rem;height:60px;display:flex;align-items:center;justify-content:space-between}
-.nav-logo{display:flex;align-items:center;gap:10px}
-.nav-logo img{width:36px;height:36px;object-fit:contain}
-.nav-logo-text{font-family:'Orbitron',sans-serif;font-size:12px;letter-spacing:.1em;color:var(--white);font-weight:700}
-.nav-links{display:flex;gap:2rem;list-style:none}
-.nav-links a{font-family:'Exo 2',sans-serif;font-weight:600;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);transition:color .2s}
-.nav-links a:hover,.nav-links a.active{color:var(--white)}
-.nav-cta{font-family:'Exo 2',sans-serif;font-weight:600;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--electric);border:1px solid var(--electric);padding:7px 16px;border-radius:2px;transition:background .2s,color .2s}
-.nav-cta:hover{background:var(--electric);color:var(--void)}
-.nav-ham{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
-.nav-ham span{display:block;width:22px;height:2px;background:var(--electric);border-radius:2px}
-.nav-mobile{display:none;background:var(--navy);border-top:1px solid var(--electric);padding:1rem 2rem;flex-direction:column;gap:1rem}
-.nav-mobile a{font-family:'Exo 2',sans-serif;font-weight:600;font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);transition:color .2s}
-.nav-mobile a:hover{color:var(--white)}
-.nav-mobile .nav-cta{align-self:flex-start;margin-top:.5rem}
-@media(max-width:768px){.nav-links{display:none}.nav-cta.desk{display:none}.nav-ham{display:flex}.nav-mobile.open{display:flex}}
-
-/* ====== HERO =============================================================== */
-#hero{min-height:100vh;position:relative;overflow:hidden;display:flex;align-items:center;background:radial-gradient(ellipse at 50% 0%,rgba(61,26,120,.45) 0%,var(--void) 65%);padding-top:60px}
-#starfield{position:absolute;inset:0;pointer-events:none}
-.hero-inner{position:relative;z-index:2;width:100%;max-width:var(--max-w);margin:0 auto;padding:0 2rem;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:3rem;min-height:calc(100vh - 60px)}
-.hero-left{display:flex;flex-direction:column;gap:1.5rem}
-.hero-logo-row{display:flex;align-items:center;gap:14px}
-.hero-m-logo{width:66px;height:66px;object-fit:contain}
-.hero-m-label{font-family:'Orbitron',sans-serif;font-size:11px;letter-spacing:.2em;color:var(--muted);font-weight:700}
-/* Title card image */
-.title-card-img{width:100%;height:auto;display:block}
-.hero-desc{font-family:'Exo 2',sans-serif;font-weight:600;font-size:clamp(14px,1.5vw,18px);color:var(--white);line-height:1.5;max-width:420px}
-.hero-cta-row{display:flex;flex-direction:column;gap:.75rem;align-items:flex-start}
-.btn-gold{font-family:'Orbitron',sans-serif;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);border:2px solid var(--gold);padding:14px 32px;border-radius:2px;cursor:pointer;transition:background .2s,color .2s,box-shadow .2s;display:inline-block}
-.btn-gold:hover{background:var(--gold);color:var(--void);box-shadow:0 0 24px rgba(196,154,40,.4)}
-.hero-hint{font-size:13px;color:var(--muted);cursor:pointer;transition:color .2s}
-.hero-hint:hover{color:var(--white)}
-.hero-mascot{display:flex;align-items:center;justify-content:center}
-.hero-mascot img{width:clamp(180px,22vw,310px);object-fit:contain;filter:drop-shadow(0 0 28px rgba(0,96,224,.3));animation:float 4s ease-in-out infinite}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-.hero-right{display:flex;flex-direction:column;gap:1.25rem}
-.hero-card{background:rgba(10,15,40,.75);border:1px solid var(--electric);border-left:3px solid var(--electric);padding:1.2rem 1.4rem;border-radius:2px;position:relative}
-.hero-card::before{content:'';position:absolute;top:-1px;left:-1px;width:12px;height:12px;border-top:2px solid var(--electric);border-left:2px solid var(--electric)}
-.hc-label{font-family:'Exo 2',sans-serif;font-weight:600;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem}
-.hc-val{font-family:'Orbitron',sans-serif;font-size:18px;color:var(--white);font-weight:700}
-.hc-desc{font-size:13px;color:var(--muted);margin-top:.25rem}
-@media(max-width:768px){.hero-inner{grid-template-columns:1fr;text-align:center;padding-top:2rem;padding-bottom:2rem;min-height:auto}.hero-left{align-items:center}.hero-cta-row{align-items:center}.hero-desc{max-width:100%}.hero-right{display:none}}
-
-/* ====== SECTION: THE NUMBERS ============================================== */
-#metrics{background:var(--navy);border-top:1px solid rgba(74,127,212,.15)}
-.met-hero{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;margin:2.5rem 0}
-.met-hero-card{background:var(--void);border:1px solid var(--electric);border-radius:2px;padding:1.75rem 1.25rem;text-align:center;position:relative;transition:border-color .2s,box-shadow .2s}
-.met-hero-card:hover{border-color:var(--gold);box-shadow:0 0 20px rgba(196,154,40,.15)}
-.met-hero-card::before{content:'';position:absolute;top:-1px;left:-1px;width:14px;height:14px;border-top:2px solid var(--gold);border-left:2px solid var(--gold)}
-.met-hero-card::after{content:'';position:absolute;bottom:-1px;right:-1px;width:14px;height:14px;border-bottom:2px solid var(--gold);border-right:2px solid var(--gold)}
-.mhc-val{font-family:'Orbitron',sans-serif;font-size:clamp(22px,3vw,40px);font-weight:700;color:var(--gold);display:block;margin-bottom:.35rem;letter-spacing:.03em}
-.mhc-lbl{font-family:'Exo 2',sans-serif;font-weight:600;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);display:block}
-.mhc-note{font-size:11px;color:rgba(139,168,204,.55);margin-top:.4rem;font-style:italic}
-@media(max-width:700px){.met-hero{grid-template-columns:repeat(2,1fr)}}
-
-.met-panels{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.5rem}
-@media(max-width:768px){.met-panels{grid-template-columns:1fr}}
-.met-panel{background:var(--royal);border-radius:2px;border:1px solid rgba(74,127,212,.25);padding:1.75rem}
-.met-panel-title{font-family:'Exo 2',sans-serif;font-weight:600;font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--electric);margin-bottom:1.25rem;display:flex;align-items:center;gap:.6rem}
-.met-panel-title::after{content:'';flex:1;height:1px;background:rgba(74,127,212,.2)}
-.met-row{display:flex;justify-content:space-between;align-items:baseline;padding:.55rem 0;border-bottom:1px solid rgba(74,127,212,.1)}
-.met-row:last-child{border-bottom:none}
-.met-row-lbl{font-size:13px;color:var(--muted)}
-.met-row-val{font-family:'Orbitron',sans-serif;font-size:14px;font-weight:700;color:var(--white);text-align:right}
-.met-row-val.highlight{color:var(--electric)}
-
-.met-reach{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;margin-bottom:1.5rem}
-@media(max-width:700px){.met-reach{grid-template-columns:repeat(2,1fr)}}
-.met-reach-card{background:var(--void);border-top:2px solid var(--electric);border-radius:2px;padding:1.25rem;text-align:center}
-.mrc-val{font-family:'Orbitron',sans-serif;font-size:clamp(16px,2vw,24px);font-weight:700;color:var(--white);display:block;margin-bottom:.3rem}
-.mrc-lbl{font-family:'Exo 2',sans-serif;font-weight:600;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
-
-.met-demo{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.5rem}
-@media(max-width:768px){.met-demo{grid-template-columns:1fr}}
-.met-campaign{background:rgba(196,154,40,.06);border:1px solid rgba(196,154,40,.25);border-radius:2px;padding:1.75rem;margin-bottom:0}
-.met-campaign-note{font-size:14px;color:var(--muted);line-height:1.65;font-style:italic}
-.met-caveat{font-size:11px;color:rgba(139,168,204,.4);margin-top:2rem;text-align:center;font-style:italic}
-
-/* ====== SECTIONS COMMON =================================================== */
-.section{padding:5rem 0}
-.sec-label{font-family:'Exo 2',sans-serif;font-weight:600;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--electric);margin-bottom:.75rem}
-.sec-title{font-family:'Orbitron',sans-serif;font-weight:700;font-size:clamp(22px,3vw,38px);letter-spacing:.04em;text-transform:uppercase;color:var(--white);line-height:1.15;margin-bottom:.75rem}
-.sec-sub{font-family:'Exo 2',sans-serif;font-weight:600;font-size:16px;color:var(--muted);margin-bottom:2rem}
-.sec-body{font-size:16px;color:var(--white);line-height:1.75}
-.sec-body p+p{margin-top:1.25rem}
-
-/* ====== SECTION 2: THE SHOW =============================================== */
-#show{background:var(--navy)}
-.show-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
-.show-panel{background:var(--royal);border-left:3px solid var(--electric);padding:2rem;border-radius:2px}
-.sp-title{font-family:'Exo 2',sans-serif;font-weight:600;font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--muted);margin-bottom:1.5rem}
-.show-row{display:flex;align-items:flex-start;gap:1rem;padding:.75rem 0;border-bottom:1px solid rgba(74,127,212,.15)}
-.show-row:last-child{border-bottom:none}
-.sr-icon{font-family:'Orbitron',sans-serif;font-size:11px;color:var(--electric);flex-shrink:0;margin-top:3px}
-.sr-label{font-family:'Exo 2',sans-serif;font-weight:600;font-size:13px;color:var(--white);display:block;margin-bottom:2px}
-.sr-desc{font-size:13px;color:var(--muted)}
-.show-pull{font-family:'Exo 2',sans-serif;font-weight:600;font-size:18px;color:var(--white);line-height:1.5;border-left:3px solid var(--gold);padding-left:1rem;margin-top:2rem}
-@media(max-width:768px){.show-grid{grid-template-columns:1fr}}
-
-/* ====== SECTION 3: GALAXY ================================================= */
-#galaxy{background:var(--void);position:relative;overflow:hidden}
-#galaxy::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 80%,rgba(61,26,120,.18) 0%,transparent 70%);pointer-events:none}
-.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin:3rem 0}
-.stat-card{background:var(--navy);border:1px solid var(--steel);padding:1.5rem 1rem;text-align:center;border-radius:2px;position:relative;transition:border-color .2s,box-shadow .2s}
-.stat-card:hover{border-color:var(--electric);box-shadow:0 0 16px rgba(0,96,224,.2)}
-.stat-card::before{content:'';position:absolute;top:-1px;left:-1px;width:12px;height:12px;border-top:2px solid var(--electric);border-left:2px solid var(--electric)}
-.stat-card::after{content:'';position:absolute;bottom:-1px;right:-1px;width:12px;height:12px;border-bottom:2px solid var(--electric);border-right:2px solid var(--electric)}
-.stat-num{font-family:'Orbitron',sans-serif;font-size:clamp(18px,2.4vw,30px);color:var(--electric);display:block;margin-bottom:.4rem;font-weight:700}
-.stat-lbl{font-family:'Exo 2',sans-serif;font-weight:600;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted)}
-@media(max-width:600px){.stat-grid{grid-template-columns:repeat(2,1fr)}}
-
-.dest-card{background:var(--navy);border:1px solid var(--electric);border-radius:2px;overflow:hidden;position:relative;margin-top:3rem}
-.dest-card::before{content:'';position:absolute;top:-1px;left:-1px;width:20px;height:20px;border-top:2px solid var(--gold);border-left:2px solid var(--gold);z-index:2}
-.dest-inner{display:grid;grid-template-columns:1fr 1fr}
-.dest-copy{padding:2.5rem}
-.dest-class{font-family:'Exo 2',sans-serif;font-weight:600;font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem}
-.dest-name{font-family:'Orbitron',sans-serif;font-size:clamp(18px,2.4vw,28px);color:var(--gold);margin-bottom:1.5rem;letter-spacing:.04em;text-transform:uppercase;font-weight:700}
-.dest-sci{font-size:15px;color:var(--white);line-height:1.7;font-style:italic}
-.dest-sci+.dest-sci{margin-top:.75rem}
-.dest-flight{margin-top:1.5rem;font-family:'Exo 2',sans-serif;font-weight:600;font-size:12px;color:var(--muted)}
-.dest-visual{background:var(--royal);display:flex;align-items:center;justify-content:center;min-height:220px}
-.bh-vis{position:relative;width:150px;height:150px;display:flex;align-items:center;justify-content:center}
-.bh-ring{position:absolute;border-radius:50%;border-style:solid;border-color:transparent;animation:spin linear infinite}
-.bh-ring:nth-child(1){width:150px;height:150px;border-width:1px;animation-duration:9s;border-top-color:rgba(0,96,224,.55)}
-.bh-ring:nth-child(2){width:108px;height:108px;border-width:1.5px;animation-duration:6s;animation-direction:reverse;border-top-color:rgba(123,79,204,.7)}
-.bh-ring:nth-child(3){width:70px;height:70px;border-width:2px;animation-duration:4s;border-top-color:rgba(0,96,224,.9)}
-.bh-core{width:26px;height:26px;background:radial-gradient(circle,#000 40%,rgba(61,26,120,.8) 100%);border-radius:50%;box-shadow:0 0 20px rgba(0,96,224,.5),0 0 40px rgba(61,26,120,.3);z-index:2}
-@keyframes spin{to{transform:rotate(360deg)}}
-@media(max-width:700px){.dest-inner{grid-template-columns:1fr}}
-
-/* ====== SECTION 4: SCIENCE ================================================ */
-#science{background:var(--navy)}
-.sci-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1.25rem;margin-top:2.5rem}
-.sci-card{background:var(--royal);border-top:3px solid var(--electric);border-radius:2px;padding:1.5rem;transition:box-shadow .25s}
-.sci-card:hover{box-shadow:0 0 20px rgba(0,96,224,.25)}
-.sci-card:hover .sci-hook{color:var(--white)}
-.sci-icon{font-size:22px;color:var(--electric);margin-bottom:.75rem;line-height:1}
-.sci-name{font-family:'Exo 2',sans-serif;font-weight:600;font-size:15px;color:var(--white);margin-bottom:.5rem}
-.sci-hook{font-size:13px;color:var(--muted);line-height:1.55;transition:color .25s}
-
-/* ====== SECTION 5: COMMUNITY ============================================== */
-#community{background:var(--void);position:relative;overflow:hidden}
-#community::after{content:'';position:absolute;bottom:0;left:0;right:0;height:60%;background:radial-gradient(ellipse at 50% 100%,rgba(61,26,120,.28) 0%,transparent 70%);pointer-events:none}
-.comm-inner{position:relative;z-index:2}
-.emote-gallery{display:flex;gap:1rem;overflow-x:auto;padding-bottom:.5rem;scrollbar-width:thin;scrollbar-color:var(--electric) var(--navy);margin:2rem 0}
-.emote-thumb{flex-shrink:0;width:80px;height:80px;border-radius:4px;background:var(--navy);display:flex;align-items:center;justify-content:center;border:1px solid transparent;transition:border-color .2s,box-shadow .2s;cursor:default}
-.emote-thumb:hover{border-color:var(--electric);box-shadow:0 0 12px rgba(0,96,224,.3)}
-.emote-thumb img{width:68px;height:68px;object-fit:contain}
-.emote-caption{font-size:13px;color:var(--muted);font-style:italic;text-align:center;margin-bottom:2.5rem}
-.fetch-label{font-family:'Exo 2',sans-serif;font-weight:600;font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--muted);margin-bottom:1.25rem}
-.fetch-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1rem;margin-bottom:3rem}
-.fetch-card{background:var(--navy);border-top:2px solid var(--electric);border-radius:2px;padding:1.25rem;transition:box-shadow .2s,transform .2s;cursor:default}
-.fetch-card:hover{box-shadow:0 0 16px rgba(0,96,224,.2);transform:translateY(-2px)}
-.fetch-item{font-family:'Exo 2',sans-serif;font-weight:600;font-size:14px;color:var(--white);margin-bottom:.4rem}
-.fetch-note{font-size:13px;color:var(--muted);font-style:italic}
-.comm-cols{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;margin-top:1.5rem}
-@media(max-width:700px){.comm-cols{grid-template-columns:1fr}}
-.comm-copy{font-size:16px;color:var(--white);line-height:1.75}
-.comm-copy p+p{margin-top:1.25rem}
-.comm-copy strong{color:var(--white)}
-.disc-panel{background:var(--navy);border:1px solid var(--electric);border-radius:2px;padding:2rem;position:relative}
-.disc-panel::before{content:'';position:absolute;top:-1px;left:-1px;width:16px;height:16px;border-top:2px solid var(--electric);border-left:2px solid var(--electric)}
-.disc-panel::after{content:'';position:absolute;bottom:-1px;right:-1px;width:16px;height:16px;border-bottom:2px solid var(--electric);border-right:2px solid var(--electric)}
-.disc-label{font-family:'Exo 2',sans-serif;font-weight:600;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem}
-.disc-copy{font-size:14px;color:var(--muted);line-height:1.65;margin-bottom:1.5rem}
-.btn-elec{font-family:'Exo 2',sans-serif;font-weight:600;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--electric);border:1.5px solid var(--electric);padding:11px 24px;border-radius:2px;display:inline-block;transition:background .2s,color .2s}
-.btn-elec:hover{background:var(--electric);color:var(--void)}
-
-/* ====== SECTION 6: EPISODES =============================================== */
-#episodes{background:var(--navy)}
-.ep-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start}
-@media(max-width:700px){.ep-grid{grid-template-columns:1fr}}
-.ep-card{background:var(--royal);border:1px solid var(--electric);border-radius:2px;padding:2rem;position:relative;overflow:hidden}
-.ep-card::before{content:'';position:absolute;top:-1px;left:-1px;width:20px;height:20px;border-top:2px solid var(--electric);border-left:2px solid var(--electric)}
-.ep-card::after{content:'';position:absolute;bottom:-1px;right:-1px;width:20px;height:20px;border-bottom:2px solid var(--electric);border-right:2px solid var(--electric)}
-.ep-badge{display:inline-block;font-family:'Exo 2',sans-serif;font-weight:600;font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--electric);border:1px solid var(--electric);padding:3px 10px;border-radius:1px;margin-bottom:1rem}
-.ep-title{font-family:'Orbitron',sans-serif;font-size:clamp(18px,2.4vw,26px);color:var(--white);text-transform:uppercase;letter-spacing:.04em;margin-bottom:.75rem;font-weight:700}
-.ep-teaser{font-size:14px;color:var(--muted);line-height:1.65;font-style:italic;margin-bottom:1.5rem}
-.ep-date{font-family:'Exo 2',sans-serif;font-weight:600;font-size:13px;color:var(--gold);letter-spacing:.08em}
-.sched-panel{display:flex;flex-direction:column;gap:1.5rem}
-.sched-item{background:rgba(0,0,0,.2);border-left:2px solid var(--steel);padding:1rem 1.25rem}
-.sched-lbl{font-family:'Exo 2',sans-serif;font-weight:600;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem}
-.sched-val{font-size:14px;color:var(--white);line-height:1.6}
-.sched-val a{color:var(--electric);transition:opacity .2s}
-.sched-val a:hover{opacity:.7}
-.cta-block{margin-top:4rem;text-align:center;padding:3rem 2rem;border:1px solid rgba(74,127,212,.2);border-radius:2px;position:relative;background:rgba(0,0,0,.15)}
-.cta-block::before{content:'';position:absolute;top:-1px;left:-1px;width:24px;height:24px;border-top:2px solid var(--gold);border-left:2px solid var(--gold)}
-.cta-block::after{content:'';position:absolute;bottom:-1px;right:-1px;width:24px;height:24px;border-bottom:2px solid var(--gold);border-right:2px solid var(--gold)}
-.cta-tagline{font-family:'Exo 2',sans-serif;font-weight:600;font-size:clamp(15px,2vw,21px);color:var(--white);margin-bottom:2rem;font-style:italic}
-.btn-gold-fill{font-family:'Orbitron',sans-serif;font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--void);background:var(--gold);padding:18px 48px;border-radius:2px;display:inline-block;transition:filter .2s,box-shadow .2s}
-.btn-gold-fill:hover{filter:brightness(1.12);box-shadow:0 0 32px rgba(196,154,40,.5)}
-
-/* ====== FOOTER ============================================================ */
-#footer{background:var(--void);border-top:3px solid var(--electric);padding:3rem 0 1.5rem}
-.footer-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2rem;margin-bottom:2.5rem}
-.fb{display:flex;flex-direction:column;gap:.75rem}
-.fb-row{display:flex;align-items:center;gap:12px}
-.fb-logo{width:42px;height:42px;object-fit:contain}
-.fb-title{font-family:'Orbitron',sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--white);max-width:150px;line-height:1.4;font-weight:700}
-.fb-tag{font-size:13px;color:var(--muted);font-style:italic;line-height:1.5}
-.fn{display:flex;flex-direction:column;gap:.5rem}
-.fn-lbl{font-family:'Exo 2',sans-serif;font-weight:600;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:.25rem}
-.fn a{font-size:13px;color:var(--muted);transition:color .2s;display:block}
-.fn a:hover{color:var(--white)}
-.fs{display:flex;flex-direction:column;gap:.75rem}
-.fs-lbl{font-family:'Exo 2',sans-serif;font-weight:600;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:.25rem}
-.soc{display:flex;align-items:center;gap:.6rem;font-size:13px;color:var(--muted);transition:color .2s}
-.soc:hover{color:var(--white)}
-.soc svg{width:16px;height:16px;flex-shrink:0;fill:var(--electric)}
-.footer-btm{border-top:1px solid rgba(74,127,212,.15);padding-top:1.25rem;font-size:12px;color:rgba(139,168,204,.5);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}
-@media(max-width:700px){.footer-grid{grid-template-columns:1fr}.footer-btm{flex-direction:column;text-align:center}}
-
-/* ====== REDUCED MOTION ==================================================== */
-@media(prefers-reduced-motion:reduce){
-  .reveal{opacity:1!important;transform:none!important;transition:none!important}
-  .hero-mascot img{animation:none!important}
-  .bh-ring{animation:none!important}
-  #starfield{display:none}
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <!-- NAV -->
-<header id="nav">
+<header id="nav" role="banner">
   <div class="nav-inner">
-    <a href="#hero" class="nav-logo">
-      <img src="assets/avatar.png" alt="MalForTheWin logo">
+    <a href="#hero" class="nav-logo" aria-label="Late Night Space Flight — home">
+      <img src="assets/avatar.png" alt="">
       <span class="nav-logo-text">MalForTheWin</span>
     </a>
-    <ul class="nav-links">
+    <ul class="nav-links" role="list">
       <li><a href="#show">Concept</a></li>
       <li><a href="#galaxy">Galaxy</a></li>
       <li><a href="#science">Science</a></li>
       <li><a href="#community">Community</a></li>
       <li><a href="#metrics">Numbers</a></li>
-      <li><a href="#episodes">Flights</a></li>
     </ul>
-    <a href="https://twitch.tv/malforthewin" target="_blank" rel="noopener" class="nav-cta desk">Watch Live</a>
-    <div class="nav-ham" id="ham" role="button" tabindex="0" aria-label="Menu">
+    <a href="https://twitch.tv/malforthewin" target="_blank" rel="noopener noreferrer" class="nav-cta desk">Watch Live</a>
+    <div class="nav-ham" id="ham" role="button" tabindex="0" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mob">
       <span></span><span></span><span></span>
     </div>
   </div>
-  <nav class="nav-mobile" id="mob">
+  <nav class="nav-mobile" id="mob" aria-label="Mobile navigation">
     <a href="#show" onclick="closeMob()">Concept</a>
     <a href="#galaxy" onclick="closeMob()">Galaxy</a>
     <a href="#science" onclick="closeMob()">Science</a>
     <a href="#community" onclick="closeMob()">Community</a>
     <a href="#metrics" onclick="closeMob()">Numbers</a>
-    <a href="#episodes" onclick="closeMob()">Flights</a>
-    <a href="https://twitch.tv/malforthewin" target="_blank" rel="noopener" class="nav-cta">Watch Live</a>
+    <a href="https://twitch.tv/malforthewin" target="_blank" rel="noopener noreferrer" class="nav-cta">Watch Live</a>
   </nav>
 </header>
 
+<main>
+
 <!-- SECTION 1: HERO -->
-<section id="hero">
-  <canvas id="starfield"></canvas>
+<section id="hero" aria-label="Introduction">
+  <canvas id="starfield" aria-hidden="true"></canvas>
   <div class="hero-inner">
     <div class="hero-left">
       <h1><img src="assets/MalFTW_lnsfTitleCard.png" alt="The Late Night Space Flight Show with MalForTheWin" class="title-card-img"></h1>
       <p class="hero-desc">A late night talk show about the universe. Live on Twitch. Ripley in the copawlot seat. Every flight, a real destination.</p>
       <div class="hero-cta-row">
-        <a href="https://twitch.tv/malforthewin" target="_blank" rel="noopener" class="btn-gold">Watch Live on Twitch</a>
+        <a href="https://twitch.tv/malforthewin" target="_blank" rel="noopener noreferrer" class="btn-orange">Watch Live on Twitch</a>
         <a href="#show" class="hero-hint">&darr; See what the show is about</a>
       </div>
     </div>
-    <div class="hero-right">
+    <div class="hero-right" aria-hidden="true">
       <div class="hero-card">
         <div class="hc-label">The Concept</div>
         <div class="hc-val">Craig Ferguson meets Carl Sagan</div>
@@ -320,12 +78,12 @@ a{color:inherit;text-decoration:none}
   </div>
 </section>
 
-<!-- SECTION 2: THE SHOW -->
-<section id="show" class="section">
+<!-- SECTION 2: THE CONCEPT -->
+<section id="show" class="section" aria-labelledby="show-title">
   <div class="container">
     <div class="reveal">
       <div class="sec-label">The Concept</div>
-      <h2 class="sec-title">This Is a Show, Not a Stream</h2>
+      <h2 class="sec-title" id="show-title">This Is a Show, Not a Stream</h2>
       <p class="sec-sub">Late night structure. Live science. Ripley in the copawlot seat.</p>
     </div>
     <div class="show-grid">
@@ -349,11 +107,11 @@ a{color:inherit;text-decoration:none}
 </section>
 
 <!-- SECTION 3: THE GALAXY -->
-<section id="galaxy" class="section">
+<section id="galaxy" class="section" aria-labelledby="galaxy-title">
   <div class="container">
     <div class="reveal">
       <div class="sec-label">The Galaxy</div>
-      <h2 class="sec-title">The Galaxy Is Real</h2>
+      <h2 class="sec-title" id="galaxy-title">The Galaxy Is Real</h2>
       <p class="sec-sub">400 billion star systems. 1:1 scale. Built on real stellar catalogue data.</p>
     </div>
     <div class="reveal sec-body">
@@ -375,7 +133,7 @@ a{color:inherit;text-decoration:none}
           <p class="dest-sci">On this show, we flew there instead.</p>
           <div class="dest-flight">In-game flight time from Sol: ~165 jumps</div>
         </div>
-        <div class="dest-visual">
+        <div class="dest-visual" aria-hidden="true">
           <div class="bh-vis">
             <div class="bh-ring"></div>
             <div class="bh-ring"></div>
@@ -389,11 +147,11 @@ a{color:inherit;text-decoration:none}
 </section>
 
 <!-- SECTION 4: THE SCIENCE -->
-<section id="science" class="section">
+<section id="science" class="section" aria-labelledby="science-title">
   <div class="container">
     <div class="reveal">
       <div class="sec-label">The Science</div>
-      <h2 class="sec-title">The Universe Has Good Material</h2>
+      <h2 class="sec-title" id="science-title">The Universe Has Good Material</h2>
       <p class="sec-sub">We pick a destination because of what it teaches us. Then we fly there.</p>
     </div>
     <div class="reveal sec-body">
@@ -412,15 +170,15 @@ a{color:inherit;text-decoration:none}
   </div>
 </section>
 
-<!-- SECTION 5: COMMUNITY -->
-<section id="community" class="section">
+<!-- SECTION 5: THE COMMUNITY -->
+<section id="community" class="section" aria-labelledby="community-title">
   <div class="container comm-inner">
     <div class="reveal">
       <div class="sec-label">The Community</div>
-      <h2 class="sec-title">Dogs of Lore</h2>
+      <h2 class="sec-title" id="community-title">Dogs of Lore</h2>
       <p class="sec-sub">Chat is the studio audience. Pull up a chair.</p>
     </div>
-    <div class="emote-gallery reveal" id="emote-gallery">
+    <div class="emote-gallery reveal" id="emote-gallery" aria-label="Ripley emotes">
         <div class="emote-thumb" data-name="malftwHype"><img src="assets/emotes/emote_hype.png" alt="malftwHype" width="80" height="80" loading="lazy"></div>
         <div class="emote-thumb" data-name="malftwFetch"><img src="assets/emotes/emote_fetch.png" alt="malftwFetch" width="80" height="80" loading="lazy"></div>
         <div class="emote-thumb" data-name="malftwCozy"><img src="assets/emotes/emote_cozy.png" alt="malftwCozy" width="80" height="80" loading="lazy"></div>
@@ -432,7 +190,7 @@ a{color:inherit;text-decoration:none}
     </div>
     <p class="emote-caption reveal">40 custom Ripley emotes. Available to all subscribers. She has range.</p>
     <div class="reveal">
-      <div class="fetch-label">!FETCH &mdash; What Ripley Might Bring Back</div>
+      <div class="fetch-label">!FETCH &mdash; What Ripley might bring back</div>
       <div class="fetch-grid">
         <div class="fetch-card"><div class="fetch-item">A Thargoid artifact</div><div class="fetch-note">(Probably fine. Definitely smells weird.)</div></div>
         <div class="fetch-card"><div class="fetch-item">A sonic screwdriver</div><div class="fetch-note">(Ripley has collected seventeen. No explanation given.)</div></div>
@@ -451,22 +209,21 @@ a{color:inherit;text-decoration:none}
       <div class="disc-panel reveal">
         <div class="disc-label">Off-Stream</div>
         <p class="disc-copy">The conversation doesn&rsquo;t stop when the stream ends. The Dogs of Lore have a Discord server&mdash;flight debrief, object recommendations, extremely off-topic channels, and at least one channel dedicated to Ripley.</p>
-        <a href="https://discord.gg/malforthewin" target="_blank" rel="noopener" class="btn-gold">Join the Dogs of Lore on Discord</a>
+        <a href="https://discord.gg/malforthewin" target="_blank" rel="noopener noreferrer" class="btn-orange">Join the Dogs of Lore on Discord</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SECTION: THE NUMBERS -->
-<section id="metrics" class="section">
+<!-- SECTION 6: THE NUMBERS -->
+<section id="metrics" class="section" aria-labelledby="metrics-title">
   <div class="container">
     <div class="reveal">
       <div class="sec-label">The Numbers</div>
-      <h2 class="sec-title">By The Numbers</h2>
+      <h2 class="sec-title" id="metrics-title">By The Numbers</h2>
       <p class="sec-sub">Audience data, engagement metrics, and community reach. Updated each season.</p>
     </div>
 
-    <!-- Hero 4: the most-cited metrics -->
     <div class="met-hero reveal">
       <div class="met-hero-card">
         <span class="mhc-val">—</span>
@@ -490,7 +247,6 @@ a{color:inherit;text-decoration:none}
       </div>
     </div>
 
-    <!-- Engagement & Consistency panels -->
     <div class="met-panels reveal">
       <div class="met-panel">
         <div class="met-panel-title">Engagement &amp; Loyalty</div>
@@ -508,10 +264,7 @@ a{color:inherit;text-decoration:none}
       </div>
     </div>
 
-    <!-- Community reach beyond Twitch -->
-    <div class="reveal">
-      <div class="met-panel-title" style="margin-bottom:1.25rem">Community Reach Beyond Twitch<span style="flex:1;height:1px;background:rgba(74,127,212,.2);display:inline-block;margin-left:.6rem;vertical-align:middle"></span></div>
-    </div>
+    <div class="met-section-title reveal">Community Reach Beyond Twitch</div>
     <div class="met-reach reveal">
       <div class="met-reach-card">
         <span class="mrc-val">—</span>
@@ -531,7 +284,6 @@ a{color:inherit;text-decoration:none}
       </div>
     </div>
 
-    <!-- Demographics & Campaign performance -->
     <div class="met-demo reveal">
       <div class="met-panel">
         <div class="met-panel-title">Demographics</div>
@@ -550,34 +302,7 @@ a{color:inherit;text-decoration:none}
   </div>
 </section>
 
-<!-- SECTION 6: EPISODES -->
-<section id="episodes" class="section">
-  <div class="container">
-    <div class="reveal">
-      <div class="sec-label">The Flights</div>
-      <h2 class="sec-title">New Flights Incoming</h2>
-      <p class="sec-sub">Late Night Space Flight returns to Twitch in 2026. Follow the channel.</p>
-    </div>
-    <div class="ep-grid">
-      <div class="ep-card reveal">
-        <div class="ep-badge">Season Premiere</div>
-        <h3 class="ep-title">Flight Zero</h3>
-        <p class="ep-teaser">After two years cryo sleep in an escape pod thanks to the Thargoid invasion of Pathamon, the show is back. First flight TBD. Follow the channel to get notified the moment we launch.</p>
-        <div class="ep-date">Coming 2026</div>
-      </div>
-      <div class="sched-panel reveal">
-        <div class="sched-item"><div class="sched-lbl">Where to Watch</div><div class="sched-val">Live on <a href="https://twitch.tv/malforthewin" target="_blank" rel="noopener">twitch.tv/malforthewin</a></div></div>
-        <div class="sched-item"><div class="sched-lbl">VOD Archive</div><div class="sched-val">YouTube &mdash; MalForTheWin</div></div>
-        <div class="sched-item"><div class="sched-lbl">Schedule</div><div class="sched-val">2026 season schedule to be confirmed. Follow to get notified when flights go live.</div></div>
-        <div class="sched-item"><div class="sched-lbl">Community</div><div class="sched-val">Discord &mdash; Dogs of Lore</div></div>
-      </div>
-    </div>
-    <div class="cta-block reveal">
-      <p class="cta-tagline">The galaxy is 100,000 light-years wide and we have a full tank of fuel.</p>
-      <a href="https://twitch.tv/malforthewin" target="_blank" rel="noopener" class="btn-gold-fill">Follow on Twitch</a>
-    </div>
-  </div>
-</section>
+</main>
 
 <!-- FOOTER -->
 <footer id="footer">
@@ -590,31 +315,30 @@ a{color:inherit;text-decoration:none}
         </div>
         <p class="fb-tag">Live space science. Late night format. Real galaxy.</p>
       </div>
-      <nav class="fn" aria-label="Footer">
+      <nav class="fn" aria-label="Footer navigation">
         <div class="fn-lbl">Navigation</div>
         <a href="#show">The Concept</a>
         <a href="#galaxy">The Galaxy</a>
         <a href="#science">The Science</a>
         <a href="#community">The Community</a>
         <a href="#metrics">The Numbers</a>
-        <a href="#episodes">The Flights</a>
       </nav>
       <div class="fs">
         <div class="fs-lbl">Find Us</div>
-        <a href="https://twitch.tv/malforthewin" target="_blank" rel="noopener" class="soc">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714z"/></svg>
+        <a href="https://twitch.tv/malforthewin" target="_blank" rel="noopener noreferrer" class="soc">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714z"/></svg>
           twitch.tv/malforthewin
         </a>
-        <a href="https://youtube.com/@malforthewin" target="_blank" rel="noopener" class="soc">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+        <a href="https://youtube.com/@malforthewin" target="_blank" rel="noopener noreferrer" class="soc">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
           youtube.com/@malforthewin
         </a>
-        <a href="https://twitter.com/malforthewin" target="_blank" rel="noopener" class="soc">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        <a href="https://twitter.com/malforthewin" target="_blank" rel="noopener noreferrer" class="soc">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
           @malforthewin
         </a>
-        <a href="https://discord.gg/malforthewin" target="_blank" rel="noopener" class="soc">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057.1 18.07.11 18.086.12 18.09a19.904 19.904 0 0 0 5.993 3.03.077.077 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
+        <a href="https://discord.gg/malforthewin" target="_blank" rel="noopener noreferrer" class="soc">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057.1 18.07.11 18.086.12 18.09a19.904 19.904 0 0 0 5.993 3.03.077.077 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
           Discord &mdash; Dogs of Lore
         </a>
       </div>
@@ -626,73 +350,6 @@ a{color:inherit;text-decoration:none}
   </div>
 </footer>
 
-<script>
-/* ── Starfield ─────────────────────────────────────────────────────────────── */
-(function(){
-  var c=document.getElementById('starfield'),ctx=c.getContext('2d'),W,H,S=[];
-  function resize(){W=c.width=c.offsetWidth;H=c.height=c.offsetHeight}
-  function mk(){return{x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.1+.2,a:Math.random()*.65+.1,vx:(Math.random()-.5)*.055,vy:(Math.random()-.5)*.055}}
-  function init(){resize();S=Array.from({length:180},mk)}
-  function draw(){
-    ctx.clearRect(0,0,W,H);
-    S.forEach(function(s){
-      ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
-      ctx.fillStyle='rgba(255,255,255,'+s.a+')';ctx.fill();
-      s.x+=s.vx;s.y+=s.vy;
-      if(s.x<0)s.x=W;if(s.x>W)s.x=0;if(s.y<0)s.y=H;if(s.y>H)s.y=0;
-    });
-    requestAnimationFrame(draw);
-  }
-  window.addEventListener('resize',resize);
-  init();draw();
-})();
-
-/* ── Scroll reveal ─────────────────────────────────────────────────────────── */
-var revEls=document.querySelectorAll('.reveal');
-var ro=new IntersectionObserver(function(entries){
-  entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target);}});
-},{threshold:.1,rootMargin:'0px 0px -30px 0px'});
-revEls.forEach(function(el){ro.observe(el);});
-
-/* ── Nav active ────────────────────────────────────────────────────────────── */
-var secs=document.querySelectorAll('section[id]');
-var nls=document.querySelectorAll('.nav-links a');
-var no=new IntersectionObserver(function(entries){
-  entries.forEach(function(e){
-    if(e.isIntersecting){nls.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id);});}
-  });
-},{threshold:.35});
-secs.forEach(function(s){no.observe(s);});
-
-/* ── Mobile menu ───────────────────────────────────────────────────────────── */
-var ham=document.getElementById('ham'),mob=document.getElementById('mob');
-ham.addEventListener('click',function(){mob.classList.toggle('open');});
-ham.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' ')mob.classList.toggle('open');});
-function closeMob(){mob.classList.remove('open');}
-
-/* ── Count-up stats ────────────────────────────────────────────────────────── */
-var cnEls=document.querySelectorAll('.stat-num[data-count]');
-var co=new IntersectionObserver(function(entries){
-  entries.forEach(function(e){
-    if(!e.isIntersecting)return;
-    var el=e.target,tgt=parseInt(el.getAttribute('data-count')),sfx=el.getAttribute('data-sfx')||'',dur=1100,t0=performance.now();
-    function tick(now){
-      var p=Math.min((now-t0)/dur,1),v=Math.floor(p*p*tgt);
-      el.textContent=v.toLocaleString()+sfx;
-      if(p<1)requestAnimationFrame(tick); else el.textContent=tgt.toLocaleString()+sfx;
-    }
-    requestAnimationFrame(tick);
-    co.unobserve(el);
-  });
-},{threshold:.5});
-cnEls.forEach(function(el){co.observe(el);});
-
-/* ── Stagger grid children ─────────────────────────────────────────────────── */
-document.querySelectorAll('.sci-grid,.fetch-grid,.stat-grid').forEach(function(g){
-  g.querySelectorAll('.sci-card,.fetch-card,.stat-card').forEach(function(c,i){
-    c.style.transitionDelay=(i*55)+'ms';
-  });
-});
-</script>
+<script src="main.js" defer></script>
 </body>
 </html>
