@@ -23,11 +23,10 @@
       <span class="nav-logo-text">MalForTheWin</span>
     </a>
     <ul class="nav-links" role="list">
-      <li><a href="#show">Concept</a></li>
-      <li><a href="#galaxy">Galaxy</a></li>
-      <li><a href="#science">Science</a></li>
+      <li><a href="#show">Show</a></li>
+      <li><a href="#destinations">Destinations</a></li>
       <li><a href="#community">Community</a></li>
-      <li><a href="#metrics">Numbers</a></li>
+      <li><a href="#numbers">Numbers</a></li>
     </ul>
     <a href="https://twitch.tv/malforthewin" target="_blank" rel="noopener noreferrer" class="nav-cta desk">Watch Live</a>
     <div class="nav-ham" id="ham" role="button" tabindex="0" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mob">
@@ -35,26 +34,29 @@
     </div>
   </div>
   <nav class="nav-mobile" id="mob" aria-label="Mobile navigation">
-    <a href="#show" onclick="closeMob()">Concept</a>
-    <a href="#galaxy" onclick="closeMob()">Galaxy</a>
-    <a href="#science" onclick="closeMob()">Science</a>
+    <a href="#show" onclick="closeMob()">Show</a>
+    <a href="#destinations" onclick="closeMob()">Destinations</a>
     <a href="#community" onclick="closeMob()">Community</a>
-    <a href="#metrics" onclick="closeMob()">Numbers</a>
+    <a href="#numbers" onclick="closeMob()">Numbers</a>
     <a href="https://twitch.tv/malforthewin" target="_blank" rel="noopener noreferrer" class="nav-cta">Watch Live</a>
   </nav>
 </header>
 
 <main>
 
-<!-- SECTION 1: HERO -->
+<!-- ═══════════════════════════════════════════════
+     SECTION 1 — HERO
+════════════════════════════════════════════════ -->
 <section id="hero" aria-label="Introduction">
   <canvas id="starfield" aria-hidden="true"></canvas>
   <div class="hero-inner">
     <div class="hero-left">
-      <h1><img src="assets/MalFTW_lnsfTitleCard.png" alt="The Late Night Space Flight Show with MalForTheWin" class="title-card-img"></h1>
-      <p class="hero-desc">A late night talk show about the universe. Live on Twitch. Ripley in the copawlot seat. Every flight, a real destination.</p>
+      <h1>
+        <img src="assets/MalFTW_lnsfTitleCard.png" alt="The Late Night Space Flight Show with MalForTheWin" class="title-card-img">
+      </h1>
+      <p class="hero-desc">Real astronomy. Live in the galaxy. Every flight, a real destination — no slides, no stock footage, just 400 billion star systems and a dog with opinions.</p>
       <div class="hero-cta-row">
-        <a href="https://twitch.tv/malforthewin" target="_blank" rel="noopener noreferrer" class="btn-orange">Watch Live on Twitch</a>
+        <a href="https://twitch.tv/malforthewin" target="_blank" rel="noopener noreferrer" class="btn-primary">Watch Live on Twitch</a>
         <a href="#show" class="hero-hint">&darr; See what the show is about</a>
       </div>
     </div>
@@ -78,52 +80,78 @@
   </div>
 </section>
 
-<!-- SECTION 2: THE CONCEPT -->
+<!-- ═══════════════════════════════════════════════
+     SECTION 2 — THE SHOW (absorbs The Galaxy)
+════════════════════════════════════════════════ -->
 <section id="show" class="section" aria-labelledby="show-title">
   <div class="container">
+
     <div class="reveal">
-      <div class="sec-label">The Concept</div>
+      <div class="sec-label">The Show</div>
       <h2 class="sec-title" id="show-title">This Is a Show, Not a Stream</h2>
       <p class="sec-sub">Late night structure. Live science. Ripley in the copawlot seat.</p>
     </div>
+
     <div class="show-grid">
-      <div class="reveal sec-body">
-        <p>Most space content gives you slides, stock footage, and a voiceover. This is something different.</p>
-        <p><em>Late Night Space Flight</em> is a live Twitch show about real astronomy&mdash;black holes, neutron stars, stellar nurseries, the galactic core. Each episode, we choose a real astronomical object or phenomenon because it&rsquo;s scientifically interesting. Then we fly there.</p>
-        <p>Inside Elite: Dangerous&mdash;a space flight simulation whose back end is a 1:1 scale, procedurally generated recreation of the Milky Way, built on real stellar catalogue data&mdash;we fly to the actual object. Four hundred billion star systems. Real stellar classes. Real distances. Real celestial phenomena, rendered as accurately as current science allows.</p>
-        <p>The visuals on screen are the game&rsquo;s rendering of that object. The conversation is about the real science. The game is the vehicle. The science is the destination.</p>
+
+      <!-- Left: prose + vehicle callout -->
+      <div>
+        <div class="reveal sec-body">
+          <p>Most space content gives you slides, stock footage, and a voiceover. This is something different.</p>
+          <p><em>Late Night Space Flight</em> is a live Twitch show about real astronomy&mdash;black holes, neutron stars, stellar nurseries, the galactic core. Each episode, we choose a real astronomical object because it&rsquo;s scientifically interesting. Then we fly there. The visuals on screen are the game&rsquo;s rendering of that object. The conversation is about the real science. The game is the vehicle. The science is the destination.</p>
+        </div>
+
+        <!-- Galaxy callout — absorbed from its own section -->
+        <div class="galaxy-callout reveal">
+          <div class="gc-label">The Vehicle</div>
+          <p class="gc-body">Elite: Dangerous is not a typical video game. Its back end is a 1:1 procedural recreation of the Milky Way derived from real stellar catalogue data&mdash;400 billion star systems, real stellar classes, real phenomena. When we fly to Sagittarius&thinsp;A* on this show, we are at the correct galactic coordinate. <strong>And it only happens on Late Night Space Flight.</strong></p>
+
+        </div>
       </div>
+
+      <!-- Right: show elements panel -->
       <div class="reveal show-panel">
         <div class="sp-title">Show Elements</div>
-        <div class="show-row"><div class="sr-icon">&#9658;</div><div><span class="sr-label">The Host</span><span class="sr-desc">MalForTheWin &mdash; late night host energy, not streamer energy. Observational humor, genuine scientific curiosity, warm with chat.</span></div></div>
-        <div class="show-row"><div class="sr-icon">&#9658;</div><div><span class="sr-label">The Copawlot</span><span class="sr-desc">Ripley &mdash; MalForTheWin&rsquo;s service dog and the show&rsquo;s co-pilot. She runs !fetch, holds strong opinions, and has 40 custom emotes. The emotional core of the broadcast.</span></div></div>
-        <div class="show-row"><div class="sr-icon">&#9658;</div><div><span class="sr-label">The Audience</span><span class="sr-desc">Dogs of Lore &mdash; chat is the studio audience. They heckle. They fetch things. They hold opinions about neutron stars.</span></div></div>
-        <div class="show-row"><div class="sr-icon">&#9658;</div><div><span class="sr-label">The Vehicle</span><span class="sr-desc">Elite: Dangerous &mdash; a 1:1 scale Milky Way. Not a game we play. A galaxy we explore.</span></div></div>
-        <div class="show-row"><div class="sr-icon">&#9658;</div><div><span class="sr-label">The Subject</span><span class="sr-desc">Real astronomy. Real astrophysics. Real cosmology. No slides. No stock footage. Live, in the galaxy.</span></div></div>
-        <div class="show-row"><div class="sr-icon">&#9658;</div><div><span class="sr-label">The Format</span><span class="sr-desc">Late night structure: cold open, main flight, science conversation, community segment, sign-off. Live on Twitch.</span></div></div>
+        <div class="show-row">
+          <div class="sr-icon">&#9658;</div>
+          <div>
+            <span class="sr-label">The Host</span>
+            <span class="sr-desc">MalForTheWin &mdash; late night host energy, not streamer energy. Observational humor, genuine scientific curiosity, warm with chat.</span>
+          </div>
+        </div>
+        <div class="show-row">
+          <div class="sr-icon">&#9658;</div>
+          <div>
+            <span class="sr-label">The Copawlot</span>
+            <span class="sr-desc">Ripley &mdash; the show&rsquo;s co-pilot and cartoon counterpart. She runs !fetch, holds strong opinions, and has 40 custom emotes. The emotional core of the broadcast.</span>
+          </div>
+        </div>
+        <div class="show-row">
+          <div class="sr-icon">&#9658;</div>
+          <div>
+            <span class="sr-label">The Audience</span>
+            <span class="sr-desc">Dogs of Lore &mdash; chat is the studio audience. They heckle. They fetch things. They hold opinions about neutron stars.</span>
+          </div>
+        </div>
+        <div class="show-row">
+          <div class="sr-icon">&#9658;</div>
+          <div>
+            <span class="sr-label">The Subject</span>
+            <span class="sr-desc">Real astronomy. Real astrophysics. Real cosmology. No slides. No stock footage. Live, in the galaxy.</span>
+          </div>
+        </div>
+        <div class="show-row">
+          <div class="sr-icon">&#9658;</div>
+          <div>
+            <span class="sr-label">The Format</span>
+            <span class="sr-desc">Late night structure: cold open, main flight, science conversation, community segment, sign-off. Live on Twitch.</span>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
 
-<!-- SECTION 3: THE GALAXY -->
-<section id="galaxy" class="section" aria-labelledby="galaxy-title">
-  <div class="container">
-    <div class="reveal">
-      <div class="sec-label">The Galaxy</div>
-      <h2 class="sec-title" id="galaxy-title">The Galaxy Is Real</h2>
-      <p class="sec-sub">400 billion star systems. 1:1 scale. Built on real stellar catalogue data.</p>
-    </div>
-    <div class="reveal sec-body">
-      <p>Elite: Dangerous is not a typical video game. Its galaxy is a 1:1 procedural recreation of the Milky Way, derived from real stellar catalogue data. Every star in the catalogue exists at the correct location, with the correct stellar classification and luminosity. Real stellar classes: O, B, A, F, G, K, M. Real phenomena: neutron stars, white dwarfs, Wolf-Rayet stars, black holes, T&thinsp;Tauri protostars, carbon stars.</p>
-      <p>When we fly to Sagittarius&thinsp;A* on this show, we are flying to the correct galactic coordinate. The object on screen is rendered from real astrophysical parameters. The science conversation happening in parallel is about the real object. <strong>There is no other show doing this.</strong></p>
-    </div>
-    <div class="stat-grid reveal">
-      <div class="stat-card"><span class="stat-num" data-count="400" data-sfx=" Billion">400 Billion</span><div class="stat-lbl">Star Systems</div></div>
-      <div class="stat-card"><span class="stat-num">1:1</span><div class="stat-lbl">Scale &mdash; Milky Way</div></div>
-      <div class="stat-card"><span class="stat-num" data-count="100000" data-sfx=" LY">100,000 LY</span><div class="stat-lbl">Galaxy Diameter</div></div>
-      <div class="stat-card"><span class="stat-num" data-count="2000" data-sfx="+">2,000+</span><div class="stat-lbl">Real Catalogue Stars</div></div>
-    </div>
+    </div><!-- /show-grid -->
+
+    <!-- Sample destination — previously in Galaxy section -->
     <div class="dest-card reveal">
       <div class="dest-inner">
         <div class="dest-copy">
@@ -131,96 +159,143 @@
           <h3 class="dest-name">Sagittarius A*</h3>
           <p class="dest-sci">Sagittarius&thinsp;A* sits at the centre of the Milky Way, 26,000 light-years from Earth, with a mass of approximately 4 million solar masses. Its event horizon spans roughly 44 million kilometres. In 2022, the Event Horizon Telescope collaboration released the first direct image of the object.</p>
           <p class="dest-sci">On this show, we flew there instead.</p>
-          <div class="dest-flight">In-game flight time from Sol: ~165 jumps</div>
+          <div class="dest-flight">In-game flight time from Pathamon: ~137 jumps</div>
         </div>
         <div class="dest-visual" aria-hidden="true">
-          <div class="bh-vis">
-            <div class="bh-ring"></div>
-            <div class="bh-ring"></div>
-            <div class="bh-ring"></div>
-            <div class="bh-core"></div>
-          </div>
+          <img src="assets/screenshot_sagA.jpg" alt="In-game view of Sagittarius A* in Elite: Dangerous" class="dest-screenshot">
         </div>
       </div>
     </div>
+
   </div>
 </section>
 
-<!-- SECTION 4: THE SCIENCE -->
-<section id="science" class="section" aria-labelledby="science-title">
+<!-- ═══════════════════════════════════════════════
+     SECTION 3 — DESTINATIONS (visual-led)
+════════════════════════════════════════════════ -->
+<section id="destinations" class="section" aria-labelledby="dest-title">
   <div class="container">
+
     <div class="reveal">
-      <div class="sec-label">The Science</div>
-      <h2 class="sec-title" id="science-title">The Universe Has Good Material</h2>
-      <p class="sec-sub">We pick a destination because of what it teaches us. Then we fly there.</p>
+      <div class="sec-label">Destinations</div>
+      <h2 class="sec-title" id="dest-title">The Universe Has Good Material</h2>
+      <p class="sec-sub">Every flight has a destination chosen for scientific interest, not game progression.</p>
     </div>
-    <div class="reveal sec-body">
-      <p>Every flight has a destination chosen for scientific interest, not game progression. Stellar nurseries. Active galactic nuclei. The structures formed in the aftermath of supernovae. Phenomena that were theoretical for most of human history and are now observable&mdash;sometimes only from a radio telescope array, sometimes from a spacecraft, and occasionally from a ship at the right coordinate.</p>
+
+    <div class="stat-grid reveal">
+      <div class="stat-card"><span class="stat-num" data-count="400" data-sfx=" Billion">400 Billion</span><div class="stat-lbl">Star Systems</div></div>
+      <div class="stat-card"><span class="stat-num">1:1</span><div class="stat-lbl">Scale &mdash; Milky Way</div></div>
+      <div class="stat-card"><span class="stat-num" data-count="100000" data-sfx=" LY">100,000 LY</span><div class="stat-lbl">Galaxy Diameter</div></div>
+      <div class="stat-card"><span class="stat-num" data-count="2000" data-sfx="+">2,000+</span><div class="stat-lbl">Real Catalogue Stars</div></div>
     </div>
+
     <div class="sci-grid reveal">
-      <div class="sci-card"><div class="sci-icon">&#9673;</div><div class="sci-name">Black Holes</div><div class="sci-hook">Where space-time folds back on itself. From stellar-mass remnants to the four-million-solar-mass anchor of the galaxy.</div></div>
-      <div class="sci-card"><div class="sci-icon">&#8859;</div><div class="sci-name">Neutron Stars &amp; Pulsars</div><div class="sci-hook">The densest stable objects in the universe. A teaspoon weighs approximately a billion tonnes.</div></div>
-      <div class="sci-card"><div class="sci-icon">&#10022;</div><div class="sci-name">Stellar Nurseries</div><div class="sci-hook">Molecular clouds collapse, heat, and ignite. Factories where stars are born—watching it live is a privilege.</div></div>
-      <div class="sci-card"><div class="sci-icon">&#8853;</div><div class="sci-name">Supernovae &amp; Remnants</div><div class="sci-hook">The deaths of massive stars—and the births of everything heavier than iron in the periodic table.</div></div>
-      <div class="sci-card"><div class="sci-icon">&#8857;</div><div class="sci-name">The Galactic Core</div><div class="sci-hook">Extreme stellar density, ancient star populations, and Sagittarius A* at the centre of everything.</div></div>
-      <div class="sci-card"><div class="sci-icon">&#8855;</div><div class="sci-name">Binary Systems</div><div class="sci-hook">Gravitational partnerships—from contact binaries to exotic pairs where one member accretes from the other.</div></div>
-      <div class="sci-card"><div class="sci-icon">&#9733;</div><div class="sci-name">Wolf-Rayet Stars</div><div class="sci-hook">Stars so massive they shed their outer layers in stellar winds. The universe’s most dramatic acts before destruction.</div></div>
-      <div class="sci-card"><div class="sci-icon">&#9676;</div><div class="sci-name">Nebulae</div><div class="sci-hook">Gas and dust: aftermath of stellar death, cradle of stellar birth, and some of the most spectacular phenomena in the sky.</div></div>
+      <div class="sci-card">
+        <div class="sci-icon">&#9673;</div>
+        <div class="sci-name">Black Holes</div>
+        <div class="sci-hook">Where space-time folds back on itself. From stellar-mass remnants to the four-million-solar-mass anchor of the galaxy.</div>
+      </div>
+      <div class="sci-card">
+        <div class="sci-icon">&#8859;</div>
+        <div class="sci-name">Neutron Stars &amp; Pulsars</div>
+        <div class="sci-hook">The densest stable objects in the universe. A teaspoon weighs approximately a billion tonnes.</div>
+      </div>
+      <div class="sci-card">
+        <div class="sci-icon">&#10022;</div>
+        <div class="sci-name">Stellar Nurseries</div>
+        <div class="sci-hook">Molecular clouds collapse, heat, and ignite. Factories where stars are born&mdash;watching it live is a privilege.</div>
+      </div>
+      <div class="sci-card">
+        <div class="sci-icon">&#8853;</div>
+        <div class="sci-name">Supernovae &amp; Remnants</div>
+        <div class="sci-hook">The deaths of massive stars&mdash;and the births of everything heavier than iron in the periodic table.</div>
+      </div>
+      <div class="sci-card">
+        <div class="sci-icon">&#8857;</div>
+        <div class="sci-name">The Galactic Core</div>
+        <div class="sci-hook">Extreme stellar density, ancient star populations, and Sagittarius A* at the centre of everything.</div>
+      </div>
+      <div class="sci-card">
+        <div class="sci-icon">&#8855;</div>
+        <div class="sci-name">Binary Systems</div>
+        <div class="sci-hook">Gravitational partnerships&mdash;from contact binaries to exotic pairs where one member accretes from the other.</div>
+      </div>
+      <div class="sci-card">
+        <div class="sci-icon">&#9733;</div>
+        <div class="sci-name">Wolf-Rayet Stars</div>
+        <div class="sci-hook">Stars so massive they shed their outer layers in stellar winds. The universe&rsquo;s most dramatic acts before destruction.</div>
+      </div>
+      <div class="sci-card">
+        <div class="sci-icon">&#10040;</div>
+        <div class="sci-name">Nebulae</div>
+        <div class="sci-hook">Gas and dust: aftermath of stellar death, cradle of stellar birth, and some of the most spectacular phenomena in the sky.</div>
+      </div>
     </div>
+
   </div>
 </section>
 
-<!-- SECTION 5: THE COMMUNITY -->
+<!-- ═══════════════════════════════════════════════
+     SECTION 4 — COMMUNITY
+════════════════════════════════════════════════ -->
 <section id="community" class="section" aria-labelledby="community-title">
   <div class="container comm-inner">
+
     <div class="reveal">
       <div class="sec-label">The Community</div>
       <h2 class="sec-title" id="community-title">Dogs of Lore</h2>
       <p class="sec-sub">Chat is the studio audience. Pull up a chair.</p>
     </div>
+
     <div class="emote-gallery reveal" id="emote-gallery" aria-label="Ripley emotes">
-        <div class="emote-thumb" data-name="malftwHype"><img src="assets/emotes/emote_hype.png" alt="malftwHype" width="80" height="80" loading="lazy"></div>
-        <div class="emote-thumb" data-name="malftwFetch"><img src="assets/emotes/emote_fetch.png" alt="malftwFetch" width="80" height="80" loading="lazy"></div>
-        <div class="emote-thumb" data-name="malftwCozy"><img src="assets/emotes/emote_cozy.png" alt="malftwCozy" width="80" height="80" loading="lazy"></div>
-        <div class="emote-thumb" data-name="malftwLore"><img src="assets/emotes/emote_lore.png" alt="malftwLore" width="80" height="80" loading="lazy"></div>
-        <div class="emote-thumb" data-name="malftwO7"><img src="assets/emotes/emote_o7.png" alt="malftwO7" width="80" height="80" loading="lazy"></div>
-        <div class="emote-thumb" data-name="malftwLurk"><img src="assets/emotes/emote_lurk.png" alt="malftwLurk" width="80" height="80" loading="lazy"></div>
-        <div class="emote-thumb" data-name="malftwSmile"><img src="assets/emotes/emote_smile.png" alt="malftwSmile" width="80" height="80" loading="lazy"></div>
-        <div class="emote-thumb" data-name="malftwGasm"><img src="assets/emotes/emote_gasm.png" alt="malftwGasm" width="80" height="80" loading="lazy"></div>
+      <div class="emote-thumb" data-name="malftwHype"><img src="assets/emotes/emote_hype.png" alt="malftwHype" width="80" height="80" loading="lazy"></div>
+      <div class="emote-thumb" data-name="malftwFetch"><img src="assets/emotes/emote_fetch.png" alt="malftwFetch" width="80" height="80" loading="lazy"></div>
+      <div class="emote-thumb" data-name="malftwCozy"><img src="assets/emotes/emote_cozy.png" alt="malftwCozy" width="80" height="80" loading="lazy"></div>
+      <div class="emote-thumb" data-name="malftwHug"><img src="assets/emotes/emote_hug.png" alt="malftwHug" width="80" height="80" loading="lazy"></div>
+      <div class="emote-thumb" data-name="malftwSTCmd"><img src="assets/emotes/emote_stcmd.png" alt="malftwSTCmd" width="80" height="80" loading="lazy"></div>
+      <div class="emote-thumb" data-name="malftwLurk"><img src="assets/emotes/emote_lurk.png" alt="malftwLurk" width="80" height="80" loading="lazy"></div>
+      <div class="emote-thumb" data-name="malftwSmile"><img src="assets/emotes/emote_o7.png" alt="malftwO7" width="80" height="80" loading="lazy"></div>
+      <div class="emote-thumb" data-name="malftwGasm"><img src="assets/emotes/emote_gasm.png" alt="malftwGasm" width="80" height="80" loading="lazy"></div>
     </div>
-    <p class="emote-caption reveal">40 custom Ripley emotes. Available to all subscribers. She has range.</p>
+    <p class="emote-caption reveal">40 custom emotes, available to all subscribers. Based on Leo (the OG copawlot).</p>
+
     <div class="reveal">
       <div class="fetch-label">!FETCH &mdash; What Ripley might bring back</div>
       <div class="fetch-grid">
         <div class="fetch-card"><div class="fetch-item">A Thargoid artifact</div><div class="fetch-note">(Probably fine. Definitely smells weird.)</div></div>
         <div class="fetch-card"><div class="fetch-item">A sonic screwdriver</div><div class="fetch-note">(Ripley has collected seventeen. No explanation given.)</div></div>
-        <div class="fetch-card"><div class="fetch-item">A copy of Cosmos</div><div class="fetch-note">(Vol. I. Pages flagged. Ripley declines to say which ones.)</div></div>
-        <div class="fetch-card"><div class="fetch-item">A Voyager golden record</div><div class="fetch-note">(She found it. She’s not giving it back.)</div></div>
+        <div class="fetch-card"><div class="fetch-item">A copy of Cosmos</div><div class="fetch-note">(Vol. I. Pages flagged. Ripley declines to say which ones.)</div></div>
+        <div class="fetch-card"><div class="fetch-item">A Voyager golden record</div><div class="fetch-note">(She found it. She&rsquo;s not giving it back.)</div></div>
         <div class="fetch-card"><div class="fetch-item">Tiramisu</div><div class="fetch-note">(For reasons Ripley declines to elaborate on, there is always tiramisu.)</div></div>
-        <div class="fetch-card"><div class="fetch-item">The Hitchhiker's Guide</div><div class="fetch-note">(Pocket edition. Already open to page 42.)</div></div>
+        <div class="fetch-card"><div class="fetch-item">The Hitchhiker&rsquo;s Guide</div><div class="fetch-note">(Pocket edition. Already open to page 42.)</div></div>
       </div>
     </div>
+
     <div class="comm-cols">
       <div class="comm-copy reveal">
         <p>The Dogs of Lore are the live audience of Late Night Space Flight. They show up in chat, they heckle the host about stellar classifications, they know Ripley by name, and they have opinions. Strong opinions. About astrophysics, about biscuits, about which episode was the best one.</p>
-        <p>Community lore accumulates. Regulars are remembered. Newcomers are welcomed.</p>
+        <p>Community lore accumulates and is recorded at our home, the Pathamon system. Regulars are remembered. Newcomers are welcomed.</p>
         <p><strong>It is not parasocial. It is genuinely communal. There is a difference.</strong></p>
       </div>
       <div class="disc-panel reveal">
         <div class="disc-label">Off-Stream</div>
         <p class="disc-copy">The conversation doesn&rsquo;t stop when the stream ends. The Dogs of Lore have a Discord server&mdash;flight debrief, object recommendations, extremely off-topic channels, and at least one channel dedicated to Ripley.</p>
-        <a href="https://discord.gg/malforthewin" target="_blank" rel="noopener noreferrer" class="btn-orange">Join the Dogs of Lore on Discord</a>
+        <a href="https://discord.gg/malforthewin" target="_blank" rel="noopener noreferrer" class="btn-primary">Join the Dogs of Lore on Discord</a>
       </div>
     </div>
+
   </div>
 </section>
 
-<!-- SECTION 6: THE NUMBERS -->
-<section id="metrics" class="section" aria-labelledby="metrics-title">
+<!-- ═══════════════════════════════════════════════
+     SECTION 5 — THE NUMBERS
+════════════════════════════════════════════════ -->
+<section id="numbers" class="section" aria-labelledby="numbers-title">
   <div class="container">
+
     <div class="reveal">
       <div class="sec-label">The Numbers</div>
-      <h2 class="sec-title" id="metrics-title">By The Numbers</h2>
+      <h2 class="sec-title" id="numbers-title">By The Numbers</h2>
       <p class="sec-sub">Audience data, engagement metrics, and community reach. Updated each season.</p>
     </div>
 
@@ -251,46 +326,34 @@
       <div class="met-panel">
         <div class="met-panel-title">Engagement &amp; Loyalty</div>
         <div class="met-row"><span class="met-row-lbl">Followers</span><span class="met-row-val">5,078</span></div>
-        <div class="met-row"><span class="met-row-lbl">Subscribers</span><span class="met-row-val highlight">260</span></div>
+        <div class="met-row"><span class="met-row-lbl">Subscribers</span><span class="met-row-val">260</span></div>
         <div class="met-row"><span class="met-row-lbl">Avg. Chat Messages / Stream</span><span class="met-row-val">14,504</span></div>
         <div class="met-row"><span class="met-row-lbl">Clip &amp; Highlight Views</span><span class="met-row-val">1,363</span></div>
         <div class="met-row"><span class="met-row-lbl">Unique Viewers / Month</span><span class="met-row-val">4,036</span></div>
       </div>
       <div class="met-panel">
         <div class="met-panel-title">Consistency</div>
-        <div class="met-row"><span class="met-row-lbl">Streams per Month</span><span class="met-row-val highlight">14</span></div>
+        <div class="met-row"><span class="met-row-lbl">Streams per Month</span><span class="met-row-val">14</span></div>
         <div class="met-row"><span class="met-row-lbl">Hours Broadcast / Month</span><span class="met-row-val">37</span></div>
-        <div class="met-row"><span class="met-row-lbl">90-Day ACV Trend</span><span class="met-row-val">Rolling 90-day ACV trend data available on request.</span></div>
+        <div class="met-row"><span class="met-row-lbl">90-Day ACV Trend</span><span class="met-row-val">Available on request</span></div>
       </div>
     </div>
 
     <div class="met-section-title reveal">Community Reach Beyond Twitch</div>
     <div class="met-reach reveal">
-      <div class="met-reach-card">
-        <span class="mrc-val">328</span>
-        <span class="mrc-lbl">Discord Members</span>
-      </div>
-      <div class="met-reach-card">
-        <span class="mrc-val">—</span>
-        <span class="mrc-lbl">YouTube Clip Views</span>
-      </div>
-      <div class="met-reach-card">
-        <span class="mrc-val">—</span>
-        <span class="mrc-lbl">TikTok Clip Views</span>
-      </div>
-      <div class="met-reach-card">
-        <span class="mrc-val">1,495</span>
-        <span class="mrc-lbl">Twitter / X Followers</span>
-      </div>
+      <div class="met-reach-card"><span class="mrc-val">328</span><span class="mrc-lbl">Discord Members</span></div>
+      <div class="met-reach-card"><span class="mrc-val">&mdash;</span><span class="mrc-lbl">YouTube Clip Views</span></div>
+      <div class="met-reach-card"><span class="mrc-val">&mdash;</span><span class="mrc-lbl">TikTok Clip Views</span></div>
+      <div class="met-reach-card"><span class="mrc-val">1,495</span><span class="mrc-lbl">Twitter / X Followers</span></div>
     </div>
 
     <div class="met-demo reveal">
       <div class="met-panel">
         <div class="met-panel-title">Demographics</div>
-        <div class="met-row"><span class="met-row-lbl">Primary Age Range</span><span class="met-row-val">—</span></div>
-        <div class="met-row"><span class="met-row-lbl">Gender Split</span><span class="met-row-val">— / —</span></div>
-        <div class="met-row"><span class="met-row-lbl">Top Markets</span><span class="met-row-val">—</span></div>
-        <div class="met-row"><span class="met-row-lbl">Platforms</span><span class="met-row-val highlight">Twitch (primary)</span></div>
+        <div class="met-row"><span class="met-row-lbl">Primary Age Range</span><span class="met-row-val">&mdash;</span></div>
+        <div class="met-row"><span class="met-row-lbl">Gender Split</span><span class="met-row-val">&mdash; / &mdash;</span></div>
+        <div class="met-row"><span class="met-row-lbl">Top Markets</span><span class="met-row-val">&mdash;</span></div>
+        <div class="met-row"><span class="met-row-lbl">Platforms</span><span class="met-row-val">Twitch (primary) &nbsp;|&nbsp; YouTube (VODs)</span></div>
       </div>
       <div class="met-panel met-campaign">
         <div class="met-panel-title">Past Campaign Performance</div>
@@ -299,6 +362,7 @@
     </div>
 
     <p class="met-caveat reveal">Metrics reflect legacy data (pre-hiatus). 2026 season data will be updated as flights launch.</p>
+
   </div>
 </section>
 
@@ -311,17 +375,16 @@
       <div class="fb">
         <div class="fb-row">
           <img src="assets/avatar.png" alt="MalForTheWin logo" class="fb-logo">
-          <div class="fb-title">Late Night Space Flight</div>
+          <div class="fb-title">Late Night<br>Space Flight</div>
         </div>
         <p class="fb-tag">Live space science. Late night format. Real galaxy.</p>
       </div>
       <nav class="fn" aria-label="Footer navigation">
         <div class="fn-lbl">Navigation</div>
-        <a href="#show">The Concept</a>
-        <a href="#galaxy">The Galaxy</a>
-        <a href="#science">The Science</a>
-        <a href="#community">The Community</a>
-        <a href="#metrics">The Numbers</a>
+        <a href="#show">Show</a>
+        <a href="#destinations">Destinations</a>
+        <a href="#community">Community</a>
+        <a href="#numbers">Numbers</a>
       </nav>
       <div class="fs">
         <div class="fs-lbl">Find Us</div>
