@@ -4,7 +4,7 @@ Official website for Late Night Space Flight with MalForTheWin — live space sc
 
 Live site: [https://malforthewin.com](https://malforthewin.com)
 
-Current version: v1.1.0
+Current version: v1.0.0-launch
 
 ---
 

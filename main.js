@@ -67,6 +67,6 @@ var co=new IntersectionObserver(function(entries){
 cnEls.forEach(function(el){co.observe(el);});
 
 /* ── Stagger grid children ─────────────────────────────────────────────────── */
-document.querySelectorAll('.sci-grid,.fetch-grid,.stat-grid,.met-hero,.met-reach').forEach(function(g){
+document.querySelectorAll('.sci-grid,.fetch-grid,.stat-grid,.stat-hero,.stat-reach').forEach(function(g){
   Array.from(g.children).forEach(function(c,i){c.style.transitionDelay=(i*55)+'ms';});
 });
