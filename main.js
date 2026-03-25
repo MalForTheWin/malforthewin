@@ -49,7 +49,7 @@ ham.addEventListener('click',function(){mob.classList.toggle('open');});
 ham.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();mob.classList.toggle('open');}});
 window.closeMob=function(){mob.classList.remove('open');};
 
-/* ── Count-up: both .stat-num[data-count] and .gc-num[data-count] ──────────── */
+/* ── Count-up: .stat-num[data-count] ──────────────────────────────────────── */
 var cnEls=document.querySelectorAll('.stat-num[data-count]');
 var co=new IntersectionObserver(function(entries){
   entries.forEach(function(e){

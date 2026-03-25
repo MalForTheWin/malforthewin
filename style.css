@@ -8,8 +8,7 @@
 :root{
   --void:#080D1F;--navy:#0A0F28;--royal:#001870;
   --electric:#0060E0;--steel:#4A7FD4;
-  --deep-violet:#3D1A78;--cosmic:#7B4FCC;
-  --orange:#FF6B35;--white:#FFFFFF;--muted:#8BA8CC;--bright:#1E90FF;
+  --gold:#D47040;--white:#FFFFFF;--muted:#8BA8CC;
   --max-w:1080px
 }
 html{scroll-behavior:smooth}
@@ -36,15 +35,15 @@ a{color:inherit;text-decoration:none}
 .nav-mobile{display:none;background:var(--navy);border-top:1px solid var(--electric);padding:1rem 2rem;flex-direction:column;gap:1rem}
 .nav-mobile a{font-family:'Exo 2',sans-serif;font-weight:600;font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);transition:color .2s}
 .nav-mobile a:hover{color:var(--white)}
-.nav-cta{font-family:'Exo 2',sans-serif;font-weight:600;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--orange);border:1px solid var(--orange);padding:7px 16px;border-radius:2px;transition:background .2s,color .2s}
-.nav-cta:hover{background:var(--orange);color:var(--void)}
+.nav-cta{font-family:'Exo 2',sans-serif;font-weight:600;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold);padding:7px 16px;border-radius:2px;transition:background .2s,color .2s}
+.nav-cta:hover{background:var(--gold);color:var(--void)}
 .nav-mobile .nav-cta{align-self:flex-start;margin-top:.5rem}
 @media(max-width:768px){.nav-links{display:none}.nav-cta.desk{display:none}.nav-ham{display:flex}.nav-mobile.open{display:flex}}
 
 /* ====== BUTTONS ============================================================ */
 /* Primary CTA — Starfield Gold (one per page) */
-.btn-primary{font-family:'Orbitron',sans-serif;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);background:transparent;border:1px solid var(--orange);padding:14px 32px;border-radius:2px;cursor:pointer;transition:background .2s,color .2s;display:inline-block}
-.btn-primary:hover{background:var(--orange);color:var(--void)}
+.btn-primary{font-family:'Orbitron',sans-serif;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);background:transparent;border:1px solid var(--gold);padding:14px 32px;border-radius:2px;cursor:pointer;transition:background .2s,color .2s;display:inline-block}
+.btn-primary:hover{background:var(--gold);color:var(--void)}
 
 /* ====== HERO =============================================================== */
 #hero{min-height:100vh;position:relative;overflow:hidden;display:flex;align-items:center;background:radial-gradient(ellipse at 50% 0%,rgba(61,26,120,.45) 0%,var(--void) 65%);padding-top:60px}
@@ -81,7 +80,7 @@ a{color:inherit;text-decoration:none}
 /* Galaxy callout — embedded in The Show section */
 .galaxy-callout{background:rgba(0,24,112,.35);border:1px solid rgba(0,96,224,.25);border-left:3px solid var(--electric);border-radius:0 2px 2px 0;padding:1.5rem 1.75rem;margin-top:1.75rem}
 .gc-label{font-family:'Exo 2',sans-serif;font-weight:600;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--electric);margin-bottom:.6rem}
-.gc-body{font-size:16px;color:var(--muted);line-height:1.7;margin-bottom:1.25rem}
+.gc-body{font-size:16px;color:var(--muted);line-height:1.7}
 .gc-body strong{color:var(--white)}
 
 /* Show elements panel */
@@ -117,7 +116,7 @@ a{color:inherit;text-decoration:none}
 .stat-card:hover{border-color:var(--electric);box-shadow:0 0 16px rgba(0,96,224,.2)}
 .stat-card::before{content:'';position:absolute;top:-1px;left:-1px;width:12px;height:12px;border-top:2px solid var(--electric);border-left:2px solid var(--electric)}
 .stat-card::after{content:'';position:absolute;bottom:-1px;right:-1px;width:12px;height:12px;border-bottom:2px solid var(--electric);border-right:2px solid var(--electric)}
-.stat-num{font-family:'Orbitron',sans-serif;font-size:clamp(18px,2.4vw,30px);color:var(--bright);display:block;margin-bottom:.4rem;font-weight:700}
+.stat-num{font-family:'Orbitron',sans-serif;font-size:clamp(18px,2.4vw,30px);color:var(--electric);display:block;margin-bottom:.4rem;font-weight:700}
 .stat-lbl{font-family:'Exo 2',sans-serif;font-weight:600;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted)}
 .sci-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1.25rem;margin-top:2.5rem}
 .sci-card{background:var(--navy);border-top:3px solid var(--electric);border-radius:2px;padding:1.5rem;transition:box-shadow .25s}
@@ -161,7 +160,7 @@ a{color:inherit;text-decoration:none}
 .met-hero-card:hover{border-color:var(--electric);box-shadow:0 0 20px rgba(0,96,224,.15)}
 .met-hero-card::before{content:'';position:absolute;top:-1px;left:-1px;width:14px;height:14px;border-top:2px solid var(--electric);border-left:2px solid var(--electric)}
 .met-hero-card::after{content:'';position:absolute;bottom:-1px;right:-1px;width:14px;height:14px;border-bottom:2px solid var(--electric);border-right:2px solid var(--electric)}
-.mhc-val{font-family:'Orbitron',sans-serif;font-size:clamp(22px,3vw,40px);font-weight:700;color:var(--bright);display:block;margin-bottom:.35rem;letter-spacing:.03em}
+.mhc-val{font-family:'Orbitron',sans-serif;font-size:clamp(22px,3vw,40px);font-weight:700;color:var(--electric);display:block;margin-bottom:.35rem;letter-spacing:.03em}
 .mhc-lbl{font-family:'Exo 2',sans-serif;font-weight:600;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);display:block}
 .mhc-note{font-size:11px;color:rgba(139,168,204,.55);margin-top:.4rem;font-style:italic}
 .met-panels{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.5rem}
@@ -178,7 +177,7 @@ a{color:inherit;text-decoration:none}
 .met-reach{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;margin-bottom:1.5rem}
 @media(max-width:700px){.met-reach{grid-template-columns:repeat(2,1fr)}}
 .met-reach-card{background:var(--navy);border-top:2px solid var(--electric);border-radius:2px;padding:1.25rem;text-align:center}
-.mrc-val{font-family:'Orbitron',sans-serif;font-size:clamp(16px,2vw,24px);font-weight:700;color:var(--bright);display:block;margin-bottom:.3rem}
+.mrc-val{font-family:'Orbitron',sans-serif;font-size:clamp(16px,2vw,24px);font-weight:700;color:var(--electric);display:block;margin-bottom:.3rem}
 .mrc-lbl{font-family:'Exo 2',sans-serif;font-weight:600;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
 .met-demo{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.5rem}
 @media(max-width:768px){.met-demo{grid-template-columns:1fr}}
