@@ -4,7 +4,12 @@ Official website for Late Night Space Flight with MalForTheWin — live space sc
 
 Live site: [https://malforthewin.com](https://malforthewin.com)
 
-Current version: v1.1.0
+## Current version: v1.3.1
+- Structure
+    - Minor CSS tweaks
+    - Paragraph & button center alignment in the Hero section
+- Content
+    - Minor text edits
 
 ---
 
@@ -24,24 +29,25 @@ Late Night Space Flight with MalForTheWin is a live Twitch show about real astro
 
 ```
 /
-├── index.html          # Single-page site — hero, show, destinations, community, numbers
+├── index.html          # Single-page site — hero, show, destinations, community, stats
 ├── style.css           # Stylesheet — brand colors, fonts, layout, responsive
 ├── main.js             # JavaScript — starfield, scroll reveal, nav, count-up animations
 ├── CNAME               # Custom domain for GitHub Pages → malforthewin.com
 ├── README.md           # This file
 └── assets/
-    ├── avatar.png                  # M mark avatar — nav logo and footer
-    ├── MalFTW_lnsfTitleCard.png    # Show title card — hero h1 image
-    ├── screenshot_sagA.jpg         # In-game screenshot of Sagittarius A* (sample dest card)
+    ├── MalFTW_avatarLNSF.png           # LNSF circle logo — nav and footer
+    ├── MalFTW_lnsfTitleCard.png        # Show title card — hero h1 image
+    ├── MalFTW_portraitMalFTW.jpg       # Host portrait — The Show section
+    ├── MalFTW_screenshot_sagA.jpg      # In-game screenshot of Sagittarius A*
     └── emotes/
-        ├── emote_hype.png          # malftwHype
-        ├── emote_fetch.png         # malftwFetch
-        ├── emote_cozy.png          # malftwCozy
-        ├── emote_hug.png           # malftwHug
-        ├── emote_stcmd.png         # malftwSTCmd
-        ├── emote_lurk.png          # malftwLurk
-        ├── emote_o7.png            # malftwO7
-        └── emote_gasm.png          # malftwGasm
+        ├── MalFTW_emoteHype.png        # malftwHype
+        ├── MalFTW_emoteFetch.png       # malftwFetch
+        ├── MalFTW_emoteCozy.png        # malftwCozy
+        ├── MalFTW_emoteHug.png         # malftwHug
+        ├── MalFTW_emoteSTCmd.png       # malftwSTCmd
+        ├── MalFTW_emoteLurk.png        # malftwLurk
+        ├── MalFTW_emoteO7.png          # malftwO7
+        └── MalFTW_emoteGasm.png        # malftwGasm
 ```
 
 ---
@@ -52,17 +58,16 @@ Late Night Space Flight with MalForTheWin is a live Twitch show about real astro
 |---|---|---|
 | Void Black | `#080D1F` | Page background |
 | Midnight Navy | `#0A0F28` | Surface / panel backgrounds |
-| Deep Royal Blue | `#001870` | Depth / section backgrounds |
 | Electric Blue | `#0060E0` | Primary active UI, borders, light source, stat numbers |
 | Steel Blue | `#4A7FD4` | Secondary UI, subtle borders |
-| Cockpit Orange | `#D47040` | Accent — CTAs and nav, one use per page |
+| Cockpit Orange | `#D47040` | Accent — CTAs and nav |
 | Pure White | `#FFFFFF` | Headings and body text on dark |
 | Muted Blue | `#8BA8CC` | Secondary / muted text |
-| Display font | Orbitron Bold 700 | Headlines, all-caps with tracking |
-| UI font | Exo 2 SemiBold 600 | Subheadings, widget labels |
-| Body font | Inter Regular 400 | Body copy, panel descriptions |
+| Display font | Roboto Bold 700/900 | Headlines, section titles, stat numbers, all-caps with tracking |
+| UI font | Exo 2 SemiBold 600 | Subheadings, labels, eyebrows, widget labels |
+| Body font | Inter Regular 400 | Base body font — paragraphs, descriptions |
 
-All fonts via Google Fonts. Violet colors (Deep Violet `#3D1A78`, Cosmic Violet `#7B4FCC`) are atmospheric only — used in background gradients, never as foreground text or button fills. They are referenced directly in CSS gradient values rather than as CSS variables.
+All fonts via Google Fonts (`Roboto:wght@700;900`, `Exo+2:wght@400;600`, `Inter:wght@400;500`). Violet colors (Deep Violet `#3D1A78`, Cosmic Violet `#7B4FCC`) are atmospheric only — used in background gradients, never as foreground text or button fills. They are referenced directly in CSS gradient values rather than as CSS variables.
 
 ---
 
@@ -74,7 +79,7 @@ All fonts via Google Fonts. Violet colors (Deep Violet `#3D1A78`, Cosmic Violet 
 | The Show | `#show` | Format explainer, show elements panel, Sagittarius A* sample destination |
 | Destinations | `#destinations` | Scale stats, 8-card science topic grid |
 | Community | `#community` | Emote gallery, !fetch showcase, Discord CTA |
-| The Numbers | `#numbers` | Audience metrics, engagement data, community reach |
+| The Stats | `#stats` | Audience metrics, engagement data, community reach |
 
 ---
 
