@@ -4,22 +4,29 @@ Official website for Late Night Space Flight with MalForTheWin — live space sc
 
 Live site: [https://malforthewin.com](https://malforthewin.com)
 
-## Current version: v1.3.1
+## Current version: v2.0
 - Structure
-    - Minor CSS tweaks
-    - Paragraph & button center alignment in the Hero section
+    - Podcast banner moved to sit between The Show and Destinations sections
+    - Discord card removed from Community section; community copy now runs full width
 - Content
-    - Minor text edits
+    - Leo introduced as the AI copawlot (virtual avatar, permanent co-presence, memorial to Mal's former service dog)
+    - Ripley introduced as the IRL Crew (doggo-cam, !fetch command)
+    - Emote gallery explicitly attributed to Leo
+    - The Copawlot, The Subject, and The Format element copy updated
+- Code
+    - All CTA buttons unified: orange outline at rest, solid orange on hover
+    - Removed orphaned CSS: `.comm-cols`, `.disc-panel`, `.disc-label`, `.disc-copy`
+    - Merged duplicate `.stat-panel-title` / `.stat-section-title` rules into a single selector
 
 ---
 
 ## About This Site
 
-Built collaboratively with Claude (Anthropic). Plain HTML, a single CSS file, a single JS file, and an assets folder. No frameworks, no build tools, no dependencies. Fast, mobile-friendly, and editable in any text editor. Hosted free on GitHub Pages.
+Plain HTML, a single CSS file, a single JS file, and an assets folder. No frameworks, no build tools, no dependencies. Fast, mobile-friendly, and editable in any text editor. Built collaboratively with Claude (Anthropic); hosted free on GitHub Pages.
 
 ## About the Channel
 
-Late Night Space Flight with MalForTheWin is a live Twitch show about real astronomy, cosmology, and astrophysics — broadcast in a late night talk show format while exploring a scientifically accurate, 1:1 scale recreation of the Milky Way inside Elite: Dangerous. Real stellar catalogue data. 400 billion star systems. Destinations chosen for astronomical interest, not game progression. Chat is the studio audience — every member is a point of light. The dog fetches.
+Late Night Space Flight with MalForTheWin is a live Twitch show about real astronomy, cosmology, and astrophysics — broadcast in a late night talk show format while exploring a scientifically accurate, 1:1 scale recreation of the Milky Way inside Elite: Dangerous. Real stellar catalogue data. 400 billion star systems. Destinations chosen for astronomical interest, not game progression. Chat is the studio audience — every member is a point of light. Lt. Leo holds the copawlot seat. Ripley fetches.
 
 **Channel:** [twitch.tv/malforthewin](https://twitch.tv/malforthewin) — Twitch Partner
 
@@ -29,7 +36,7 @@ Late Night Space Flight with MalForTheWin is a live Twitch show about real astro
 
 ```
 /
-├── index.html          # Single-page site — hero, show, destinations, community, stats
+├── index.html          # Single-page site — hero, show, podcast, destinations, community, stats
 ├── style.css           # Stylesheet — brand colors, fonts, layout, responsive
 ├── main.js             # JavaScript — starfield, scroll reveal, nav, count-up animations
 ├── CNAME               # Custom domain for GitHub Pages → malforthewin.com
@@ -60,7 +67,7 @@ Late Night Space Flight with MalForTheWin is a live Twitch show about real astro
 | Midnight Navy | `#0A0F28` | Surface / panel backgrounds |
 | Electric Blue | `#0060E0` | Primary active UI, borders, light source, stat numbers |
 | Steel Blue | `#4A7FD4` | Secondary UI, subtle borders |
-| Cockpit Orange | `#D47040` | Accent — CTAs and nav |
+| Cockpit Orange | `#D47040` | Accent — all CTA buttons and nav |
 | Pure White | `#FFFFFF` | Headings and body text on dark |
 | Muted Blue | `#8BA8CC` | Secondary / muted text |
 | Display font | Roboto Bold 700/900 | Headlines, section titles, stat numbers, all-caps with tracking |
@@ -69,6 +76,8 @@ Late Night Space Flight with MalForTheWin is a live Twitch show about real astro
 
 All fonts via Google Fonts (`Roboto:wght@700;900`, `Exo+2:wght@400;600`, `Inter:wght@400;500`). Violet colors (Deep Violet `#3D1A78`, Cosmic Violet `#7B4FCC`) are atmospheric only — used in background gradients, never as foreground text or button fills. They are referenced directly in CSS gradient values rather than as CSS variables.
 
+CTA buttons are Cockpit Orange outline at rest; solid Cockpit Orange fill on hover. This applies to all `.btn-primary` instances site-wide, including the nav Watch Live button.
+
 ---
 
 ## Sections
@@ -76,9 +85,10 @@ All fonts via Google Fonts (`Roboto:wght@700;900`, `Exo+2:wght@400;600`, `Inter:
 | Section | ID | Description |
 |---|---|---|
 | Hero | `#hero` | Show title card, three-card concept summary, primary CTA |
-| The Show | `#show` | Format explainer, show elements panel, Sagittarius A* sample destination |
-| Destinations | `#destinations` | Scale stats, 8-card science topic grid |
-| Community | `#community` | Emote gallery, !fetch showcase, Discord CTA |
+| The Show | `#show` | Format explainer, show elements panel (host, copawlot, IRL crew, audience, subject, format), host portrait, vehicle callout |
+| Podcast Banner | *(no ID)* | Podcast availability — Spotify, Apple Podcasts, Amazon Music |
+| Destinations | `#destinations` | Scale stats, 8-card science topic grid, Sagittarius A* sample destination card |
+| Community | `#community` | Leo emote gallery, !fetch showcase, community copy |
 | The Stats | `#stats` | Audience metrics, engagement data, community reach |
 
 ---
@@ -96,7 +106,6 @@ Deploys automatically via GitHub Pages on every push to `main`. No build step re
 | Twitch | https://twitch.tv/malforthewin |
 | X / Twitter | https://x.com/malforthewin |
 | YouTube | https://youtube.com/@malforthewin |
-| Discord | https://discord.gg/malforthewin |
 
 ---
 
@@ -123,17 +132,17 @@ Late Night Space Flight with MalForTheWin. A Twitch show about real astronomy, l
 
 **Positioning:** Science communication (astronomy, cosmology, astrophysics). Category: Cosmos meets The Late Show.
 
-### The Copawlot
+### The Copawlot & The IRL Crew
 
-The cartoon dog is the emotional core of the brand — hero-level asset across all materials. 40 custom Twitch channel emotes. The !fetch command has the dog fetching items for chat members (sonic screwdriver, Thargoid artifact, NASA mission patch, tiramisu, etc.). Community name: The Constellation.
+**Lt. Leo — the copawlot.** Leo is an on-screen animated virtual avatar and the show's permanent co-presence. He is a memorial to Mal's former service dog Leo (Border Collie/Golden Retriever mix, 2007–2021). All 40 custom Twitch channel emotes are based on Leo — this is intentional, not incidental. If Mal is flying, Leo is in the seat.
 
-The emote character is based on Leo, a Border Collie/Golden Retriever mix who passed away in 2021 — a memorial. The current real-world copawlot is Ripley, a Belgian Malinois service dog in training, who shares a birthday with Mal (Nov 30). The emote set may eventually be updated to reflect Ripley.
+**Ripley — the IRL crew.** Ripley is Mal's current Belgian Malinois service dog in training. She appears on the doggo-cam when she feels like it. She runs the !fetch command. She once retrieved a Thargoid artifact and has not explained where she found it.
 
-Do not use "mascot" or "cartoon dog" in copy — always use "copawlot," "the copawlot," or "Ripley."
+Do not use "mascot" or "cartoon dog" in copy — always use "the copawlot," "Lt. Leo," "Leo," or "Ripley" as appropriate. Leo and Ripley have distinct roles and should never be conflated.
 
 ### Visual System
 
-Corner bracket motif is the brand's signature geometric element. Electric Blue (`#0060E0`) is the light source — it outlines, borders, and activates. Cockpit Orange (`#D47040`) is the accent color: one use per page, primary CTAs only. Violet-indigo is atmospheric depth — background gradients only, never foreground.
+Corner bracket motif is the brand's signature geometric element. Electric Blue (`#0060E0`) is the light source — it outlines, borders, and activates. Cockpit Orange (`#D47040`) is the accent color for all CTA buttons — outline at rest, solid fill on hover. Violet-indigo is atmospheric depth — background gradients only, never foreground.
 
 ### Brand Reference Files
 
