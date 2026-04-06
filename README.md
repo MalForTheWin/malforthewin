@@ -116,6 +116,16 @@ Deploys automatically via GitHub Pages on every push to `main`. No build step re
 Late Night Space Flight with MalForTheWin. A Twitch show about real astronomy, live in the galaxy. The dog has opinions. The Constellation — welcome.
 ```
 
+**Twitch**
+```
+Twitch Partner & Host of Late Night Space Flight. 🔭 Live space science. 📺 Late night format. �敖 Simulated galaxy (via Elite Dangerous). 🐕‍🦺 Virtual copawlot. 🚀 I fly the ship; the dog has opinions.
+```
+
+**YouTube**
+```
+Twitch Partner & Host of Late Night Space Flight. 🔭 Live space science. 📺 Late night format. 🪐 Simulated galaxy (via Elite Dangerous). 🐕‍🦺 Virtual copawlot. 🚀 I fly the ship; the dog has opinions.
+```
+
 ---
 
 ## Content & Branding Notes
