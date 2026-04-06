@@ -113,17 +113,20 @@ Deploys automatically via GitHub Pages on every push to `main`. No build step re
 
 **Twitter / X**
 ```
-Late Night Space Flight with MalForTheWin. A Twitch show about real astronomy, live in the galaxy. The dog has opinions. The Constellation — welcome.
+Twitch Partner & Host of Late Night Space Flight. Live space science. Simulated galaxy 
+@EliteDangerous. Virtual copawlot. I fly the ship; the dog has opinions.
 ```
 
 **Twitch**
 ```
-Twitch Partner & Host of Late Night Space Flight. 🔭 Live space science. 📺 Late night format. �敖 Simulated galaxy (via Elite Dangerous). 🐕‍🦺 Virtual copawlot. 🚀 I fly the ship; the dog has opinions.
+Twitch Partner & Host of Late Night Space Flight. 🔭 Live space science. 📺 Late night format. 🪐 Simulated galaxy (via Elite Dangerous). 🐕‍🦺 Virtual copawlot. 🚀 I fly the ship; the dog has opinions.
 ```
 
 **YouTube**
 ```
-Twitch Partner & Host of Late Night Space Flight. 🔭 Live space science. 📺 Late night format. 🪐 Simulated galaxy (via Elite Dangerous). 🐕‍🦺 Virtual copawlot. 🚀 I fly the ship; the dog has opinions.
+A live Twitch show about real astronomy in a late night talk show format. Your host, MalForTheWin, flies to real celestial objects — neutron stars, stellar nurseries, supermassive black holes — inside Elite: Dangerous, a 1:1 scale Milky Way built on actual stellar catalogue data. The science happens live, on camera, with chat as the studio audience.
+
+Episodes are VOD’d here. Subscribe for the science.
 ```
 
 ---
